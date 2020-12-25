@@ -1,0 +1,10 @@
+name: mariadb
+title: MariaDB
+
+services:
+- name: mariadb
+  title: MariaDB
+  service: mariadb
+  volumes:
+  - name: mysql-data
+    size: 20
