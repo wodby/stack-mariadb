@@ -1,5 +1,6 @@
 name: mariadb
 title: MariaDB
+icon: mariadb
 
 services:
 - name: mariadb
