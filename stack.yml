@@ -7,5 +7,5 @@ services:
   title: MariaDB
   service: mariadb
   volumes:
-  - name: mysql-data
+  - name: data
     size: 20
