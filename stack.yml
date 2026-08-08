@@ -9,3 +9,19 @@ services:
   volumes:
   - name: data
     size: 20
+
+- name: adminer
+  title: Adminer
+  service: adminer
+  disabled: true
+  links:
+  - name: db
+    service: mariadb
+
+- name: phpmyadmin
+  title: phpMyAdmin
+  service: phpmyadmin
+  disabled: true
+  links:
+  - name: db
+    service: mariadb

@@ -5,6 +5,7 @@ Deploy MariaDB applications on Kubernetes with Wodby.
 This repository defines the Wodby stack manifests and default service
 composition for MariaDB.
 
+- [MariaDB stack on Wodby](https://wodby.com/stacks/mariadb)
 - [Browse Wodby application stacks](https://wodby.com/stacks)
 - [Wodby stack documentation](https://wodby.com/docs/2.0/stacks/)
 - [Stack manifest reference](https://wodby.com/docs/2.0/stacks/template/)
@@ -12,12 +13,16 @@ composition for MariaDB.
 ## Service definitions
 
 - [MariaDB service](https://github.com/wodby/service-mariadb)
+- [Adminer service](https://github.com/wodby/service-adminer)
+- [phpMyAdmin service](https://github.com/wodby/service-phpmyadmin)
 
 ## What's included
 
 | Component / service | Default configuration |
 | --- | --- |
 | MariaDB<br>`mariadb` | optional; enabled by default; volumes: `data` 20 GB |
+| Adminer<br>`adminer` | optional; disabled by default; link `db` → `mariadb` |
+| phpMyAdmin<br>`phpmyadmin` | optional; disabled by default; link `db` → `mariadb` |
 
 Enabled optional services are selected by default but can be excluded when an
 app is created. Disabled optional services are available but not selected by
