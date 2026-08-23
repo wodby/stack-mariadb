@@ -5,6 +5,10 @@ Deploy MariaDB applications on Kubernetes with Wodby.
 This repository defines the Wodby stack manifests and default service
 composition for MariaDB.
 
+<!-- wodby:generated:start -->
+
+## Stack contract
+
 - [MariaDB stack on Wodby](https://wodby.com/stacks/mariadb)
 - [Browse Wodby application stacks](https://wodby.com/stacks)
 - [Wodby stack documentation](https://wodby.com/docs/2.0/stacks/)
@@ -21,12 +25,20 @@ composition for MariaDB.
 | Component / service | Default configuration |
 | --- | --- |
 | MariaDB<br>`mariadb` | optional; enabled by default; volumes: `data` 20 GB |
-| Adminer<br>`adminer` | optional; disabled by default; link `db` → `mariadb` |
-| phpMyAdmin<br>`phpmyadmin` | optional; disabled by default; link `db` → `mariadb` |
+| Adminer<br>`adminer` | optional; disabled by default; links: `db` → `mariadb` |
+| phpMyAdmin<br>`phpmyadmin` | optional; disabled by default; links: `db` → `mariadb` |
 
 Enabled optional services are selected by default but can be excluded when an
 app is created. Disabled optional services are available but not selected by
 default. Required services cannot be excluded.
+
+## Validate the stack manifest
+
+```bash
+wodby stack validate-manifest stack.yml --org <org-id>
+```
+
+<!-- wodby:generated:end -->
 
 ## Deploy this stack
 
@@ -46,11 +58,3 @@ production environments.
 When replacing or renaming a stack service, update every related link target
 and derivative reference. Stack-local names and referenced service names are
 distinct identifiers.
-
-Validate the manifests with:
-
-```bash
-wodby stack validate-manifest stack.yml --org <org-id>
-```
-
-See the [stack manifest reference](https://wodby.com/docs/2.0/stacks/template/) and the [managed services index](https://github.com/wodby/services).
